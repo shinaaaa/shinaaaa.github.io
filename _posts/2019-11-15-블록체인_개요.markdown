@@ -1,0 +1,28 @@
+---
+layout: post
+title: 블록체인 개요
+date: 2019-11-15 00:00:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [Blockchian] # add tag
+---
+
+### 블록체인
+
+- Peer-to-Peer 네크워크를 사용해 독립적인 당사자에서 어떤 종류의 가치 혹은 자산이든 전송하는 능력을 제공
+- 블록체인 기술의 초기 목표는 독립적인 두 당사자 간에 은행과 같은 제 3자의 개입이 없어도 신뢰할 수 있는 금융 거래를 수립하는 것
+- 추후 공급망 관리, 고객 본인 확인, 데이터 관리 등을 간소화하기 위해 블록체인을 적용
+
+### 역사
+
+- 2009년 사토시 나카모토가 기존 금융 시장의 문제를 해결하기 위한 백서를 발간
+- 금융기관을 거치지 않고 한 당자사에게서 다른 당사자로 온라인 지불을 할 수 있는 플랫폼을 개발하는 데 중정을 둠
+- 비트코인의 이중 출금 방지를 하기 위해서 제안한 해결책이 블록체인
+
+### 기초
+
+- 블록체인은 탈 중앙화된 데이터베이스로서 모든 거래의 기록을 읽기 전용으로 안전하게 보존
+- 신뢰할 수 있는 관리자 또는 개발자만이 관리하는 것이 아니라 신뢰할 수 없거나 알려지지 않은 참가자도 참여 가능
+- 인터넷으로 연결된 컴퓨터들이 블록체인 노드 소프트웨어를 통해 어플리케이션을 실행
+- 조건에 따라서 참여자를 제한 가능 ( ex. 은행만 노드 어플리케이션을 실행하도록 제한을 둔 뱅크체인 )
