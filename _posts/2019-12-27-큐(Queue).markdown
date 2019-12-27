@@ -3,7 +3,7 @@ layout: post
 title: 큐(Queue)
 date: 2019-12-27 00:00:00 +0000
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: <img src='https://user-images.githubusercontent.com/37543606/71496985-779b5f80-2899-11ea-8600-3882c088b234.jpg' ># Add image post (optional)
+img: https://user-images.githubusercontent.com/37543606/71496985-779b5f80-2899-11ea-8600-3882c088b234.jpg# Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [큐(Queue), 자료구조론] # add tag
 ---
