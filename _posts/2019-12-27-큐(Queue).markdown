@@ -3,105 +3,107 @@ layout: post
 title: 큐(Queue)
 date: 2019-12-27 00:00:00 +0000
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: illustration-stickman-kids-queue-taking-260nw-1542791690.jpg# Add image post (optional)
+img:# Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [큐(Queue), 자료구조론] # add tag
 ---
 
-###큐(Queue)
+- <img src='https://user-images.githubusercontent.com/37543606/71496985-779b5f80-2899-11ea-8600-3882c088b234.jpg' >
 
-- 줄서는 행위와 유사함
+  ###큐(Queue)
 
-- 데이터를 일시적으로 쌓아 두기 위한 자료구조
-- 가장 먼저 넣은 데이터를 가장 먼저 꺼내는 선입선출(FIFO : First In First Out) 구조
-- 시연해보며 이해보기 : https://visualgo.net/en/list
+  - 줄서는 행위와 유사함
 
-####인큐(Enqueue)
+  - 데이터를 일시적으로 쌓아 두기 위한 자료구조
+  - 가장 먼저 넣은 데이터를 가장 먼저 꺼내는 선입선출(FIFO : First In First Out) 구조
+  - 시연해보며 이해보기 : https://visualgo.net/en/list
 
-- 데이터를 넣는 작업
+  ####인큐(Enqueue)
 
-####디큐(Dequeue)
+  - 데이터를 넣는 작업
 
-- 데이터를 꺼내는 작업
+  ####디큐(Dequeue)
 
-####프론트 (Front)
+  - 데이터를 꺼내는 작업
 
-- 데이터를 꺼내는 쪽
+  ####프론트 (Front)
 
-####리어(Rear)
+  - 데이터를 꺼내는 쪽
 
-- 데이터를 넣는 쪽
+  ####리어(Rear)
 
+  - 데이터를 넣는 쪽
 
+  
 
-#####Java
+  #####Java
 
-```java
-import java.util.*;
-
-public class ExQueue {
-  public static void main(String[] args) {
-    /* LinkedList queue = new LinkedList(); */
-    Queue<Integer> queue = new LinkedList<Integer>();
-
-    /* Queue에 값을 저장 */
-    System.out.println("Queue에 값을 저장");
-    for (int i = 0; i < 10; i++) {
-      /* queue.add(i); */
-      queue.offer(i);
-    }
-    /* Queue의 크기 확인 */
-    System.out.println("Queue의 크기 : " + queue.size());
-    /*
-     * Queue에서 맨앞에 값을 꺼냄 꺼낸 값은 지워지지않음
-     */
-    System.out.println("Queue에서 맨앞에 값을 꺼냄 꺼낸 값은 지워지지않음");
-    System.out.println(queue.peek());
-
-    /* Queue에서 값을 꺼내면서 값을 지움 */
-    System.out.println("Queue에서 값을 꺼내면서 값을 지움");
-    for (int i = 0; i < 10; i++) {
-      if (queue.size() == 10) {
-        System.out.print("[ ");
+  ```java
+  import java.util.*;
+  
+  public class ExQueue {
+    public static void main(String[] args) {
+      /* LinkedList queue = new LinkedList(); */
+      Queue<Integer> queue = new LinkedList<Integer>();
+  
+      /* Queue에 값을 저장 */
+      System.out.println("Queue에 값을 저장");
+      for (int i = 0; i < 10; i++) {
+        /* queue.add(i); */
+        queue.offer(i);
       }
-      System.out.print(queue.poll());
-      System.out.print(", ");
-      if (i == 9) {
-        System.out.println("] ");
+      /* Queue의 크기 확인 */
+      System.out.println("Queue의 크기 : " + queue.size());
+      /*
+       * Queue에서 맨앞에 값을 꺼냄 꺼낸 값은 지워지지않음
+       */
+      System.out.println("Queue에서 맨앞에 값을 꺼냄 꺼낸 값은 지워지지않음");
+      System.out.println(queue.peek());
+  
+      /* Queue에서 값을 꺼내면서 값을 지움 */
+      System.out.println("Queue에서 값을 꺼내면서 값을 지움");
+      for (int i = 0; i < 10; i++) {
+        if (queue.size() == 10) {
+          System.out.print("[ ");
+        }
+        System.out.print(queue.poll());
+        System.out.print(", ");
+        if (i == 9) {
+          System.out.println("] ");
+        }
       }
+      /* Queue의 크기 확인 */
+      System.out.println("Queue의 크기 확인 : " + queue.size());
     }
-    /* Queue의 크기 확인 */
-    System.out.println("Queue의 크기 확인 : " + queue.size());
   }
-}
-```
+  ```
 
+  
 
+  #####Python
 
-#####Python
-
-```python
-import queue
-
-Ex_queue = queue.Queue()
-
-print('Queue에 값을 저장')
-for i in range(0, 10):
-    Ex_queue.put(i)
-    pass
-print('Queue의 크기 : ', Ex_queue.qsize())
-
-print('Queue에서 값을 꺼내면서 값을 지움')
-for i in range(0, 10):
-    if Ex_queue.qsize() == 10:
-        print('[', end=' ')
-    print(Ex_queue.get(), end=', ')
-    if Ex_queue.qsize() == 0:
-        print(']')
-    pass
-print('Queue의 크기 : ', Ex_queue.qsize())
-print(Ex_queue.qsize())
-
-```
+  ```python
+  import queue
+  
+  Ex_queue = queue.Queue()
+  
+  print('Queue에 값을 저장')
+  for i in range(0, 10):
+      Ex_queue.put(i)
+      pass
+  print('Queue의 크기 : ', Ex_queue.qsize())
+  
+  print('Queue에서 값을 꺼내면서 값을 지움')
+  for i in range(0, 10):
+      if Ex_queue.qsize() == 10:
+          print('[', end=' ')
+      print(Ex_queue.get(), end=', ')
+      if Ex_queue.qsize() == 0:
+          print(']')
+      pass
+  print('Queue의 크기 : ', Ex_queue.qsize())
+  print(Ex_queue.qsize())
+  
+  ```
 
 이미지 출처 : https://image.shutterstock.com/image-vector/illustration-stickman-kids-queue-taking-260nw-1542791690.jpg
