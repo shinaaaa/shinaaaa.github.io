@@ -73,4 +73,82 @@ tags: [해시 테이블 (Hash Table), 자료구조론] # add tag
 
 
 
+##### Java
+
+```java
+import java.util.*;
+
+public class ExHashTable {
+  public static void main(String[] args) {
+
+    /* HashMap 선언 */
+    HashMap<String, Integer> hashmap = new HashMap<String, Integer>();
+
+    /* HashMap에 값 저장 */
+    hashmap.put("피카츄", 10);
+    hashmap.put("파이리", 13);
+    hashmap.put("꼬부기", 11);
+    hashmap.put("이상해씨", 9);
+
+    /* HashMap의 키 값 확인 */
+    System.out.println(hashmap.keySet());
+
+    /* HashMap의 키 값과 데이터 확인 */
+    for (String key : hashmap.keySet()) {
+      System.out.println(key + "의 레벨 : " + hashmap.get(key));
+    }
+
+    /* HashMap 키 "꼬부기" 삭제 */
+    hashmap.remove("꼬부기");
+
+    /* HashMap 키 "피카츄"의 값 31로 변경 */
+    hashmap.replace("피카츄", 31);
+
+    System.out.println("---------------------------");
+
+    /* HashMap의 키 값과 데이터 확인 */
+    for (String key : hashmap.keySet()) {
+      System.out.println(key + "의 레벨 : " + hashmap.get(key));
+    }
+  }
+}
+```
+
+
+
+##### Python
+
+```python
+""" HashTable 생성 """
+HashTable = list([0 for i in range(10)])
+
+
+def getKey(data):
+    return hash(data)
+
+
+def hashFunction(key):
+    return key % 10
+
+
+def saveData(data, value):
+    hashAddress = hashFunction(getKey(data))
+    HashTable[hashAddress] = value
+
+
+def readData(data):
+    hashAddress = hashFunction(getKey(data))
+    return HashTable[hashAddress]
+
+
+saveData('파이리', 10)
+saveData('피카츄', 13)
+
+print(readData('파이리'))
+
+print(HashTable)
+```
+
+
+
 출처 : https://open4tech.com/array-vs-linked-list-vs-hash-table/
