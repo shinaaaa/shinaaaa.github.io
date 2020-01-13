@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 리액트 생명주기(React LifeCylcle)
+title: 리액트 생명주기 (React LifeCylcle)
 date: 2020-01-13 00:00:00 +0000
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [리액트 생명주기(React LifeCylcle), 리액트 (React) # add tag
+tags: [리액트 생명주기(React LifeCylcle), 리액트 (React)] # add tag
 ---
 
 <img src="https://user-images.githubusercontent.com/37543606/72235415-71391180-3615-11ea-922b-2ef336aa294d.png" />
