@@ -1036,7 +1036,6 @@ table tfoot td {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -1464,7 +1463,6 @@ a.newer-posts:hover {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    justify-content: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
