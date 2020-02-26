@@ -44,7 +44,7 @@ tags: [액티비티 생명주기 (Activity LifeCycle), 안드로이드 (Android)
 
 #### - 해당 Activity가 보이지않으면 onStop()을 호출, 다시 Activity로 돌아오면 onRestart() 거치어 onStart()가 호출
 
-a
+
 
 #### onDestroy()
 
