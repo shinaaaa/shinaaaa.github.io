@@ -1,0 +1,47 @@
+---
+layout: post
+title: 안드로이드 단말기 상태 확인
+date: 2021-01-07 00:00:00 +0000
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [단말기 상태확인, RunningAppProcessInfo, ActivityLifecycleCallbacks, 안드로이드 (Android)] # add tag
+---
+
+안드로이드 애플리케이션 앱을 제작하다보면 현재 앱이 Background 상태인지 Foreground 상태인지 확인할 필요가 있다. <br>
+현재 앱이 Background 상태와 Foreground 상태에 따라 notification을 띄울지 아니면 AlertDialog를 띄울지 아니면
+FCM 혹은 AWS SNS(Simple Notification Service)를 사용하여 PUSH 알림을 받은 후 이후 동작을 처리할 경우이다.
+
+"ActivityManager.RunningAppProcessInfo"와 "Application.ActivityLifecycleCallbacks"가 있다.
+RunningAppProcessInfo은 현재 시스템에서 실행중인 프로세스 목록을 가져오는 것이며, ActivityLifecycleCallbacks은 엑티비티의 상태를 불러 오는 것이라고 한다.
+
+기존에 현재 단말기에 실행중인 Service 가져오는 메소드로 ActivityManager.getRunningServices()를 사용하여 목록을 불러왔다.
+하지만 보안 정책으로 현재 실행중인 애플리케이션에서 다른 애플리케이션의 정보를 가져오는 것이 막히게 되어서 RunningAppProcessInfo를 사용하여
+실행 중인 또는 실행할 애플리케이션의 프로세스 상태 값을 가져올 수 있게 되었다.
+
+아래의 코드는 현재 실행중인 또는 실행할 애플리케이션의 값을 불러와 이후 동작할 수 있도록 하는 코드이다.
+````java
+    public boolean isApplicationBroughtToBackground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+
+        if (activityManager != null) {
+            try {
+                List<ActivityManager.RunningAppProcessInfo> runningAppProcessInfoList = activityManager.getRunningAppProcesses();
+        
+                if (runningAppProcessInfoList.isEmpty()) return true;
+                if (runningAppProcessInfoList.get(0).importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND)
+                    return false;
+            } catch (SecurityException e) {
+                e.getStackTrace();
+                return true;
+            } catch (IndexOutOfBoundsException e) {
+                e.getStackTrace();
+                return true;
+            }
+        }
+        return true;
+    }
+````
+
+ActivityManager.RunningAppProcessInfo : https://developer.android.com/reference/android/app/ActivityManager.RunningAppProcessInfo <br>
+Application.ActivityLifecycleCallbacks : https://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks
